@@ -6,9 +6,6 @@ backend:
 # A médiafájlok (képek, hangok) kezelése
 media_folder: "images"
 public_folder: "/images"
-media_library:
-  config:
-    multiple: true
 
 # A szerkeszthető tartalmak gyűjteményei
 collections:
