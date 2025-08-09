@@ -1,7 +1,8 @@
 # A háttérrendszer beállítása
 backend:
-  name: git-gateway # FIGYELEM: Nem 'github', hanem 'git-gateway'! Ez használja a Netlify Identity-t.
-  branch: main # Az ág, ahova a módosításokat menti
+  name: github  # Visszaállítjuk 'git-gateway'-ről 'github'-ra!
+  repo: Webkoll/Naprendszer # FONTOS: Cserélje le a saját GitHub nevére és a repozitórium nevére!
+  branch: main
 
 # A médiafájlok (képek, hangok) kezelése
 media_folder: "images"
