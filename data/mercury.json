@@ -1,0 +1,8 @@
+{
+    "id": "mercury",
+    "nev": "Merkúr",
+    "kep": "images/merkúr.png",
+    "hang": "audio/mercury.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Merkúr: A fürge és forró bolygó</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Képzeld el, hogy egy olyan világban jársz, ahol az egyik pillanatban perzselő forróság van, a másikban pedig dermesztő hideg! Ez a Merkúr, a Naphoz legközelebbi és egyben a legkisebb bolygó a Naprendszerünkben. Nevét a római istenek hírnökéről, Mercuriusról kapta, és nem véletlenül: hihetetlenül gyorsan, mindössze 88 földi nap alatt kerüli meg a Napot.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Merkúr felszíne nagyon hasonlít a mi Holdunkéra: tele van kráterekkel. Nincsenek rajta felhők, sem állandó légkör, ami megvédhetné a szélsőséges hőmérséklettől. Emiatt a napos oldalon a hőmérséklet akár a 430 Celsius-fokot is elérheti, míg az éjszakai oldalon -183 Celsius-fok alá is süllyedhet.</span></p>",
+    "galeria": ["images/mercury/merkúr1.jpg", "images/mercury/merkúr2.jpg","images/mercury/merkúr3.webp"]
+}

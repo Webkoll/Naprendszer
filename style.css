@@ -1,0 +1,768 @@
+/* --- TESTRESZABHATÓ BEÁLLÍTÁSOK --- */
+:root {
+    --background-color: #00001a;
+    --background-image-url: url('images/space-background.jpg');
+    --text-color: #ffffff;
+    --primary-glow-color: #75a9b7;
+}
+
+/* ------------------------------------ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    background-image: var(--background-image-url);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.p{
+    color:(#ffffff);
+}
+.strong{
+    color: (#8c8c8c);
+}
+
+header, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    /* JAVÍTÁS: A header megkapja a térközt, így a belső tartalma nem okoz ugrálást. */
+    padding: 15vh 0;
+}
+
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 5px var(--text-color);
+    /* JAVÍTÁS: A problémás, ugrálást okozó vh-alapú margót eltávolítjuk. */
+    margin: 0;
+    padding: 0;
+}
+
+.solar-system {
+    position: relative;
+    width: 100%;
+    /* A magasságot a JavaScript állítja be dinamikusan */
+}
+
+.celestial-object {
+    position: fixed; /* A görgetéshez kötött animációhoz fixed pozíció kell */
+    top: 5%;
+    left: 50%;
+    /* A transzformációt a JS vezérli, a transitiont eltávolítjuk innen a folyamatos mozgásért */
+    will-change: transform;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Nincs többé opacity és transform transition, mert a JS képkockánként frissíti */
+}
+
+.planet {
+    border-radius: 50%;
+}
+
+/* Információs dobozok */
+.planet-details {
+    position: absolute;
+    top: 50%;
+    left: 120%; /* Alapértelmezett pozíció jobbra */
+    width: 400px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-left: 2px solid var(--primary-glow-color);
+    text-align: left;
+    line-height: 1.6; /* Sorok közötti távolság beállítása */
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px);
+    /* Az infoboxnak megmarad a transition-je, mert a 'visible' class váltja ki */
+    transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+}
+
+/* --- Kuiper-öv infobox egyedi pozicionálása --- */
+
+.kuiper-belt .planet-details {
+    /* Felülírjuk az alapértelmezett jobb oldali pozíciót */
+    top: 35%;          /* Felülről közelebb hozzuk az elem tetejéhez */
+    left: 80%;         /* Vízszintesen középre helyezzük a szülő elemhez képest */
+    width: 400px;      /* Mivel ez egy nagyobb téma, adhatunk neki nagyobb szélességet */
+    text-align: left;/* szöveg balra igazítva */
+    border-left: none; /* A bal oldali díszítő csíkot eltávolítjuk */
+    border-left: 2px solid var(--primary-glow-color); /* Helyette kap egy felső csíkot */
+
+    /* Az animációhoz a kezdő transzformációt is módosítani kell.
+       Most vízszintesen középre igazít, és egy kicsit lejjebb van tolva. */
+    transform: translateX(-50%) translateY(30px);
+}
+
+/* Amikor a Kuiper-öv láthatóvá válik, az infobox a helyére úszik.
+   Ezt a szabályt is specifikusabbá kell tenni. */
+.celestial-object.kuiper-belt.visible .planet-details {
+    /* A végleges pozíció a vízszintes középre igazítás, függőleges eltolás nélkül. */
+    transform: translateX(-50%) translateY(0);
+}
+
+.celestial-object.visible .planet-details {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.planet-details p { margin: 5px 0; }
+
+/* Bolygó neve */
+.planet::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 0 0 8px #000;
+}
+
+/* --- ÉGITESTEK MÉRETEI --- */
+.sun { width: 500px; height: 500px; border-radius: 50%; }
+.mercury { width: 80px; height: 80px; }
+.venus { width: 150px; height: 150px; }
+.earth { width: 160px; height: 160px; }
+.mars { width: 120px; height: 120px; }
+.jupiter { width: 400px; height: 400px; }
+.saturn { width: 500px; height: 250px; border-radius: 0; }
+.uranus { width: 200px; height: 200px; }
+.neptune { width: 190px; height: 190px; }
+.pluto { width: 60px; height: 60px; }
+
+/* Képek */
+.sun { background-image: url('images/sun1.png'); }
+.mercury { background-image: url('images/merkúr.png'); }
+.venus { background-image: url('images/vénusz.png'); }
+.earth { background-image: url('images/föld.png'); }
+.mars { background-image: url('images/Planet_Mars.png'); }
+.jupiter { background-image: url('images/jupiter.png'); }
+.saturn { background-image: url('images/szaturnusz.png'); }
+.uranus { background-image: url('images/uránusz.png'); }
+.neptune { background-image: url('images/neptunusz.png'); }
+.pluto { background-image: url('images/pluto.png'); }
+
+/* Hold */
+.moon-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    animation: orbit-earth 10s linear infinite;
+}
+.moon {
+    position: absolute;
+    top: -15px;
+    left: calc(50% - 12.5px);
+    width: 25px;
+    height: 25px;
+    background-image: url('images/hold_kráterekkel.png');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+@keyframes orbit-earth {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Hold és ISS a Föld körül */
+.moon-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s ease-in-out; /* Animáció a pályaváltáshoz */
+    animation: orbit-earth 10s linear infinite;
+}
+.moon {
+    position: absolute;
+    top: -15px; left: calc(50% - 12.5px);
+    width: 25px; height: 25px;
+    background-image: url('images/hold_kráterekkel.png');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.iss-orbit {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 120%; height: 120%;
+    transform: translate(-50%, -50%);
+    animation: orbit-earth 6s linear infinite; /* Gyorsabb keringés */
+}
+.iss {
+    position: absolute;
+    top: -15px; left: calc(50% - 20px);
+    width: 40px; height: 40px;
+    background-image: url('images/iss.png'); /* Add meg az ISS képét */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Alapból rejtett */
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* ISS aktiválásakor történő változások */
+.earth.iss-active .moon-orbit {
+    width: 220%; /* Külső pálya */
+    height: 220%;
+    animation-duration: 15s; /* Lassabb keringés a távolabbi pályán */
+}
+.earth.iss-active .iss {
+    opacity: 1; /* ISS megjelenítése */
+}
+
+#scrolling-voyager {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    /* A méret a JS-ből jön, de adjunk neki egy alapot */
+    width: 120px;
+    height: 120px;
+    background-image: url('images/voyager-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Alapból legyen teljesen láthatatlan és a transzformációk miatt ne ugorjon be */
+    opacity: 100;
+    transform: translate(-50%, -50%) scale(0);
+    /* Fontos, hogy a JS vezérelhesse akadozás nélkül */
+    will-change: transform, opacity;
+    z-index: 500; /* Legyen a bolygók felett, de a nav alatt */
+}
+
+/* Marsjáró a Mars körül */
+.rover-orbit {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 110%; height: 110%;
+    transform: translate(20%, 20%);
+    animation: orbit-mars 30s linear infinite;
+}
+.rover {
+    position: absolute;
+    bottom: 0; left: calc(70% - 60px);
+    width: 30px; height: 30px;
+    background-image: url('images/marsjaro.png'); /* Add meg a marsjáró képét */
+    transform:rotate(0.5turn) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* E.T. átrepülés a Jupiter körül */
+.et-flyby {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100px; height: 100px;
+    background-image: url('images/Et.png'); /* Add meg az E.T. képét */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; /* Alapból rejtett */
+}
+.jupiter.et-active .et-flyby {
+    animation: fly-across-jupiter 4s 1 ease-in-out;
+}
+
+/* Voyager a Kuiper-övben */
+.voyager {
+    position: absolute;
+    top: 60%;
+    left: 20%; /* Képernyőn kívülről indul */
+    width: 120px;
+    height: 120px;
+    background-image: url('images/voyager-1.png'); /* Add meg a Voyager képét */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+}    
+
+.kuiper-belt {
+    width: 1600px;
+    height: 1200px;
+    border-radius: 50;
+    /* Adj neki egy háttérképet, pl. egy sűrű csillagmezőt */
+    background-image: url('images/kuiper.png');
+}
+
+/* Kulcskocka animációk */
+@keyframes orbit-earth {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes orbit-mars {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+@keyframes fly-across-jupiter {
+    0% { left: 200%; opacity: 1;}
+    100% { left: -200%; opacity: 1;}
+}
+
+
+/* === FELÜLNÉZETI NAPRENDSZER STÍLUSAI === */
+
+/* A body classa váltja a nézeteket */
+body.overview-active > header,
+body.overview-active > .solar-system,
+body.overview-active > footer,
+body.overview-active > nav,
+body.overview-active > .site-footer { /* FIGYELEM: A logóra hivatkozó sort (#impresszum-logo-top) eltávolítottuk innen! */
+    display: none; /* Rejtsük el a görgetős tartalmat */
+}
+
+#solar-system-overview {
+    display: none; /* Alapból rejtett */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00001a;
+    background-image: url('images/space-background.jpg');
+    background-size: cover;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+body.overview-active #solar-system-overview {
+    display: flex; /* Mutassuk, ha a body megkapja a classt */
+}
+
+#close-overview-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.overview-sun {
+    width: 100px;
+    height: 100px;
+    background-image: url('images/sun1.png');
+    background-size: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 25px #75a9b7) drop-shadow(0 0 45px #75a9b7ac);
+    position: absolute;
+}
+
+/* Általános pálya stílus */
+.orbit-path {
+    position: absolute;
+    border: 1px dotted rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: orbit-around-sun linear infinite;
+}
+
+/* Bolygó a pályán */
+.planet-in-orbit {
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    /* A bolygó a pálya tetejére kerül */
+    left: 50%;
+    top: 0;
+}
+
+/* Egyedi pálya méretek és bolygó méretek/pozíciók */
+.mercury-orbit-path { width: 20vmin; height: 20vmin; animation-duration: 8.8s; }
+.mercury-in-orbit { width: 10px; height: 10px; background-image: url('images/merkúr.png'); transform: translate(-50%, -50%); }
+
+.venus-orbit-path { width: 30vmin; height: 30vmin; animation-duration: 22.5s; }
+.venus-in-orbit { width: 25px; height: 25px; background-image: url('images/vénusz.png'); transform: translate(-50%, -50%); }
+
+.earth-orbit-path { width: 40vmin; height: 40vmin; animation-duration: 36.5s; }
+.earth-in-orbit { width: 25px; height: 25px; background-image: url('images/föld.png'); transform: translate(-50%, -50%); }
+
+.mars-orbit-path { width: 50vmin; height: 50vmin; animation-duration: 68.7s; }
+.mars-in-orbit { width: 20px; height: 20px; background-image: url('images/mars/mars.png'); transform: translate(-50%, -50%); }
+
+.jupiter-orbit-path { width: 60vmin; height: 60vmin; animation-duration: 120s; }
+.jupiter-in-orbit { width: 40px; height: 40px; background-image: url('images/jupiter.png'); transform: translate(-50%, -50%); }
+
+.saturn-orbit-path { width: 70vmin; height: 70vmin; animation-duration: 295s; }
+.saturn-in-orbit { width: 80px; height: 40px; background-image: url('images/szaturnusz.png'); border-radius: 0; transform: translate(-50%, -50%); }
+
+.uranus-orbit-path { width: 80vmin; height: 80vmin; animation-duration: 400s; } /* Csak jelzésértékű idő */
+.uranus-in-orbit { width: 25px; height: 25px; background-image: url('images/uránusz.png'); transform: translate(-50%, -50%); }
+
+.neptune-orbit-path { width: 90vmin; height: 90vmin; animation-duration: 600s; } /* Csak jelzésértékű idő */
+.neptune-in-orbit { width: 24px; height: 24px; background-image: url('images/neptunusz.png'); transform: translate(-50%, -50%); }
+
+.pluto-orbit-path { width: 100vmin; height: 100vmin; animation-duration: 800s; } /* Csak jelzésértékű idő */
+.pluto-in-orbit { width: 10px; height: 10px; background-image: url('images/pluto.png'); transform: translate(-50%, -50%); }
+
+
+/* Kuiper-öv SVG */
+#kuiper-belt-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+
+/* Görgetős nézetben a Voyager szondák közös stílusa */
+.voyager-probe {
+    width: 120px;
+    height: 120px;
+    background-image: url('images/voyager-1.png'); /* Mindkettő ugyanazt a képet használja */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+    will-change: transform, opacity;
+    z-index: 500;
+}
+.voyager-probe::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    text-shadow: 0 0 8px #000;
+}
+
+
+/* Felülnézetben a Voyager szondák */
+#overview-voyager, #overview-voyager-2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/voyager-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0; 
+    pointer-events: none;
+    transition: opacity 0.5s; 
+}
+
+/* Voyager-1 animációja (változatlan) */
+#overview-voyager.voyager-launched {
+    opacity: 1;
+    animation: voyager-escape 30s linear forwards;
+}
+@keyframes voyager-escape {
+    from { transform: translate(0, 0) scale(1) rotate(0deg); }
+    to { transform: translate(-80vw, -20vh) scale(20) rotate(360deg); opacity: 0; }
+}
+
+/* ÚJ: Voyager-2 animációja (eltérő irány) */
+#overview-voyager-2.voyager-launched {
+    opacity: 1;
+    animation: voyager-escape-2 30s linear forwards;
+}
+@keyframes voyager-escape-2 {
+    from { transform: translate(0, 0) scale(1) rotate(0deg); }
+    /* A 45 fokos eltérést a translate értékeinek módosításával érjük el */
+    to { transform: translate(-60vw, -60vh) scale(20) rotate(270deg); opacity: 0; }
+}
+
+/* Voyager a felülnézetben */
+#overview-voyager {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/voyager-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 100; /* Alapból legyen teljesen átlátszó/rejtett */
+    pointer-events: none; /* Ne lehessen rákattintani */
+    transition: opacity 0s; /* Finom megjelenés */
+}
+
+/* Animáció a Voyager távolodásához */
+#overview-voyager.voyager-launched {
+    opacity: 100;
+    animation: voyager-escape 500s linear forwards;
+}
+
+/* Kulcskocka animációk */
+@keyframes orbit-around-sun {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes voyager-escape {
+    from {
+        /* Az opacity-t kivettük, a többi marad */
+        transform: translate(0, 0) scale() rotate(0deg);
+    }
+    to {
+        transform: translate(-800vw, -200vh) scale(200) rotate(360deg);
+        /* Az opacity végállapotát a forwards kulcsszó miatt érdemes az animáció végére is betenni */
+        opacity: 10;
+    }
+}
+
+/* --- NAVIGÁCIÓS SÁV --- */
+nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+
+    /* --- ÚJ TULAJDONSÁGOK A KERETHEZ --- */
+    border: 1px solid rgb(117, 169, 183); /* Vékony, félig átlátszó fehér keret */
+    border-radius: 20px; /* Lekerekített sarkok, hogy passzoljon a gombokhoz */
+    padding: 15px 8px; /* Belső térköz, hogy a gombok ne érjenek a kerethez */
+    background-color: rgba(0, 0, 26, 0.3); /* Halvány, sötétkék háttér */
+    backdrop-filter: blur(4px); /* Üvegszerű "blur" effektus a háttérnek */
+}
+
+nav a {
+    width: 30px; /* Méret növelése a képnek */
+    height: 30px; /* Méret növelése a képnek */
+    background-color: transparent; /* Háttérszín eltávolítása */
+    background-size: contain; /* A kép töltse ki a teret, de ne vágódjon le */
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid transparent; /* Kicsit vastagabb keret az aktív állapothoz */
+    transition: all 0.3s ease;
+    position: relative;
+}
+nav a:hover, nav a.active {
+    border-color: var(--primary-glow-color); /* Nincs háttérszín, csak a keret változik */
+    transform: scale(1.2);
+    box-shadow: 0 0 8px var(--primary-glow-color); /* Fényudvar effektus */
+}
+nav a .nav-planet-name {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 150%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: visibility 0.2s, opacity 0.2s ease;
+}
+nav a:hover .nav-planet-name {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Navigációs linkek egyedi bolygóképei */
+nav a[href="#sun"] { background-image: url('images/sun1.png'); }
+nav a[href="#mercury"] { background-image: url('images/merkúr.png'); }
+nav a[href="#venus"] { background-image: url('images/vénusz.png'); }
+nav a[href="#earth"] { background-image: url('images/föld.png'); }
+nav a[href="#mars"] { background-image: url('images/Planet_Mars.png'); }
+nav a[href="#jupiter"] { background-image: url('images/jupiter.png'); }
+nav a[href="#saturn"] { background-image: url('images/szaturnusz.png'); }
+nav a[href="#uranus"] { background-image: url('images/uránusz.png'); }
+nav a[href="#neptune"] { background-image: url('images/neptunusz.png'); }
+nav a[href="#pluto"] { background-image: url('images/pluto.png'); }
+nav a[href="#kuiper-belt"] { background-image: url('images/kuiper.png'); }
+
+nav a .nav-planet-name {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 150%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: visibility 0.2s, opacity 0.2s ease;
+}
+nav a:hover .nav-planet-name {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.action-button {
+    background-color: var(--primary-glow-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.action-button:hover {
+    background-color: #fff;
+    transform: scale(1.05);
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 1024px) {
+    h1 { font-size: 2.5rem; }
+    .planet-details {
+        left: 50%;
+        top: auto;
+        bottom: 120%;
+        transform: translateX(-50%) translateY(-20px);
+        width: 300px;
+        max-width: 300px;
+        text-align: center;
+        border-left: none;
+        border-top: 2px solid var(--primary-glow-color);
+    }
+    .celestial-object.visible .planet-details {
+        transform: translateX(-50%) translateY(0);
+    }
+    .planet::after { font-size: 1.2rem; bottom: -50px; }
+    .saturn::after { bottom: -20px; }
+     /* Logó méretének csökkentése mobilon */
+    #impresszum-logo-top {
+        width: 20px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .planet-details { font-size: 0.9rem; padding: 15px; }
+    nav { right: 10px; gap: 12px; }
+    nav a { width: 10px; height: 10px; }
+
+    .sun { width: 300px; height: 300px; }
+    .mercury { width: 30px; height: 30px; }
+    .venus { width: 90px; height: 90px; }
+    .earth { width: 100px; height: 100px; }
+    .mars { width: 80px; height: 80px; }
+    .jupiter { width: 250px; height: 250px; }
+    .saturn { width: 300px; height: 150px; }
+    .uranus { width: 130px; height: 130px; }
+    .neptune { width: 120px; height: 120px; }
+    .pluto { width: 40px; height: 40px; }
+}
+/* Fix logó a bal felső sarokban */
+#impresszum-logo-top {
+    position: fixed;
+    top: 15px;
+    left: 0px;
+    width: 40px; /* Tetszőleges méret */
+    z-index: 2000; /* Legyen minden felett */
+    transition: transform 0.3s ease;
+}
+
+#impresszum-logo-top img {
+    width: 50%;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); /* Finom fényudvar */
+}
+
+#impresszum-logo-top:hover {
+    transform: scale(1.1);
+}
+
+/* Láblécben lévő impresszum konténer */
+.site-footer {
+    height: -100vh;
+    padding: 20px 20px;
+    margin-top: 50vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000 50%);
+    text-align: center;
+    position: relative; /* A dokumentum alján marad, a görgethető rész után */
+    z-index: 10;
+}
+
+/* A korábbi impresszum konténer stílusainak finomítása */
+.footer-impresszum-container {
+    margin: 0 auto; /* Középre igazítja magát a .site-footer-en belül */
+    padding-top: 30px;
+    width: 90%;
+    max-width: 600px;
+    border-top: 1px solid var(--primary-glow-color);
+    /* Az előzőleg itt lévő margin-top és margin-bottom felesleges,
+       mert a szülő (.site-footer) rendelkezik padding-gel. */
+}
+
+.footer-impresszum-container h2 {
+    color: var(--primary-glow-color);
+    text-shadow: 0 0 10px var(--primary-glow-color);
+}
+
+.footer-impresszum-container .footer-logo {
+    width: 100px;
+    margin: 15px 0;
+    transition: transform 0.3s ease;
+}
+
+.footer-impresszum-container .footer-logo:hover {
+    transform: scale(1.1);
+}
+
+.footer-impresszum-container p {
+    color: #ccc;
+}
+
+.footer-impresszum-container a {
+    color: var(--primary-glow-color);
+    text-decoration: none;
+}
+
+.footer-impresszum-container a:hover {
+    text-decoration: underline;
+}
+/* A csúszkát és címkéjét tartalmazó konténer stílusa */
+#distance-slider-container {
+    position: absolute; /* A felülnézeti konténerhez igazodik */
+    bottom: 30px; /* Alulról 30px távolságra */
+    left: 50%; /* Vízszintesen középre */
+    transform: translateX(-50%); /* Pontos középre igazítás */
+    z-index: 110; /* Legyen a bolygók pályái felett */
+    background: rgb(117, 169, 183); /* Háttér, illeszkedve a dizájnhoz */
+    backdrop-filter: blur(5px);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(117, 169, 183, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Térköz a címke és a csúszka között */
+    color: #f0f0f0;
+}
+
+/* Maga a csúszka */
+#distance-slider {
+    cursor: pointer; /* A kurzor jelezze, hogy használható */
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+
+
+

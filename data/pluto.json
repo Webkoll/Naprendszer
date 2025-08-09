@@ -1,0 +1,8 @@
+{
+    "id": "pluto",
+    "nev": "Plútó",
+    "kep": "images/pluto.png",
+    "hang": "audio/pluto.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Kuiper-öv leghíresebb lakója</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Plútót 1930-ban fedezték fel, és sokáig a kilencedik bolygónak tartották, de 2006-ban „törpebolygóvá” minősítették át, mivel a Kuiper-övben számos hozzá hasonló méretű égitestet találtak.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A New Horizons űrszonda 2015-ös elhaladása során kiderült, hogy a felszíne meglepően változatos. Vannak rajta hatalmas, nitrogénjégből álló síkságok (a híres, szív alakú Tombaugh Regio), és több kilométer magas, vízjégből álló hegyek. Legnagyobb holdja, a Charon, olyan hatalmas hozzá képest, hogy sokan kettős törpebolygó-rendszernek tekintik őket.</span></p>",
+    "galeria": ["images/pluto/pluto1.jpg", "images/pluto/pluto_charon.jpg", "images/pluto/pluto_surface.jpg"]
+}

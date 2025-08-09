@@ -1,0 +1,8 @@
+{
+    "id": "voyager",
+    "nev": "Voyager-1",
+    "kep": "images/voyager/voyager_artist.jpg",
+    "hang": "audio/voyager_golden_record.mp3",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Az emberiség üzenete a csillagoknak</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Voyager-1 űrszondát a NASA 1977-ben indította útjára, hogy a külső bolygókat, a Jupitert és a Szaturnuszt tanulmányozza. Küldetésének sikeres teljesítése után azonban útja nem ért véget. Tovább haladt a Naprendszer pereme felé, és 2012-ben az első ember alkotta tárgyként belépett a csillagközi térbe.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Jelenleg ez a Földtől legtávolabb lévő objektum, amely folyamatosan távolodik tőlünk, és jeleket küld vissza a mélyűrből. A Voyager-1 magával viszi az „Aranylemezt”, egy aranyozott réz hanglemezt, amely hangokat és képeket tartalmaz a Földről. Ez egyfajta időkapszula, egy üzenet az univerzumnak, amely bemutatja világunk sokszínűségét és kultúráját, arra az esetre, ha egy idegen civilizáció rátalálna. A lemezen üdvözletek hallhatók 55 nyelven, zenék a világ minden tájáról, valamint a természet és az emberiség hangjai.</span></p>",
+    "galeria": ["images/voyager/golden_record.jpg", "images/voyager/pale_blue_dot.png", "images/voyager/voyager_launch.jpg", "images/voyager/voyager_trajectory.jpg"]
+}

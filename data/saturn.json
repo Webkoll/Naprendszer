@@ -1,0 +1,8 @@
+{
+    "id": "saturn",
+    "nev": "Szaturnusz",
+    "kep": "images/szaturnusz.png",
+    "hang": "audio/saturn.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A gyűrűk ura, a Naprendszer ékköve</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Ha van bolygó, amit szinte mindenki azonnal felismer, az a Szaturnusz. Hírnevét a lélegzetelállítóan gyönyörű és bonyolult gyűrűrendszerének köszönheti. A híres gyűrűk nem szilárd korongok, hanem milliárdnyi apró jég- és kőzetdarabból állnak.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Maga a Szaturnusz a legkisebb sűrűségű bolygó a Naprendszerben; sűrűsége kisebb, mint a vízé. A bolygónak több mint 140 ismert holdja van, köztük a leghíresebb a Titán, amelynek sűrű, nitrogénben gazdag légköre van.</span></p>",
+    "galeria": ["images/saturn/sat1.jpg", "images/saturn/sat2.jpg", "images/saturn/szaturnusz_hubble.jpg"]
+}

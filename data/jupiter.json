@@ -1,0 +1,8 @@
+{
+    "id": "jupiter",
+    "nev": "Jupiter",
+    "kep": "images/jupiter.png",
+    "hang": "audio/jupiter.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Naprendszer óriása és viharos királya</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Messze a sziklás bolygók birodalmán túl kering a Naprendszer vitathatatlan uralkodója, a Jupiter. Ez a bolygó egy igazi óriás, akkora, hogy az összes többi bolygó kényelmesen elférne benne. A Jupiter egy gázóriás, ami főként hidrogénből és héliumból áll.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A leglátványosabb képződménye a Nagy Vörös Folt, egy hatalmas vihar, ami már legalább 300 éve tombol a bolygó déli féltekéjén. A Jupiternek van egy halvány gyűrűrendszere és több mint 90 ismert holdja, köztük a híres Galilei-holdak: az Io, Európa, Ganymedes és Callisto.</span></p>",
+    "galeria": ["images/jupiter/jup1.jpg", "images/jupiter/jup2.jpg", "images/jupiter/jup3.jpg", "images/jupiter/jup4.png"]
+}

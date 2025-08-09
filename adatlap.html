@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolygó Adatlap</title>
+    <link rel="stylesheet" href="adatlap-style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="bolygo-nev">Adatok betöltése...</h1>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            <div class="main-image-container">
+                <img id="bolygo-kep" src="" alt="A bolygó képe">
+            </div>
+            <div class="details-container">
+                <h2>Leírás és adatok</h2>
+                <p id="bolygo-leiras"></p>
+
+                <!-- === ÚJ AUDIOLEJÁTSZÓ KONTÉNER === -->
+                <div id="audio-player-container" class="audio-player-container">
+                    <audio id="audio-player"></audio>
+                    <button id="play-pause-btn" class="player-btn">▶</button>
+                    <input type="range" id="seek-slider" class="seek-slider" value="0">
+                    <button id="stop-btn" class="player-btn">■</button>
+                    <div id="time-display" class="time-display">00:00 / 00:00</div>
+                </div>
+                <!-- ================================== -->
+
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <h2>Képgaléria</h2>
+            <div id="kep-galeria" class="gallery">
+                <!-- A JavaScript ide fogja beilleszteni a képeket -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="vissza-gomb-container">
+            <a href="index.html" id="close-overview-btn">Vissza a Felfedezéshez</a>
+        </div>
+    </footer>
+    
+    <div id="modal-overlay">
+        <span id="close-modal-btn">×</span>
+        <img id="modal-image" src="" alt="Nagyított kép">
+    </div>
+
+    <script src="adatlap-script.js"></script>
+</body>
+</html>

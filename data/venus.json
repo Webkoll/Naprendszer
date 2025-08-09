@@ -1,0 +1,8 @@
+{
+    "id": "venus",
+    "nev": "Vénusz",
+    "kep": "images/vénusz.png",
+    "hang": "audio/venus.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A ragyogó, de pokoli szomszéd</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Az esti vagy a hajnali égbolton gyakran látunk egy hihetetlenül fényes csillagot, ami igazából nem is csillag. Ez a Vénusz, a Föld „nővérének” is becézett bolygó. Ragyogó szépsége miatt a szerelem és a szépség római istennőjéről nevezték el. Sokáig azt hitték, trópusi paradicsom lehet, de az űrszondák kiderítették: a Vénusz felszíne egy igazi pokol.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Vénusz a Naprendszer legforróbb bolygója, a felszínén állandóan 465 Celsius-fok körüli hőmérséklet uralkodik. Ennek oka a rendkívül sűrű, szén-dioxidban gazdag légköre, ami egy megállíthatatlan üvegházhatást hoz létre.</span></p>",
+    "galeria": ["images/venus/venus1.jpg", "images/venus/venus2.jpg","images/venus/venus3.jpg","images/venus/venus4.jpg"]
+}

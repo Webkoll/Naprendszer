@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresszum</title>
+    <!-- Hivatkozás az új, dedikált stíluslapra -->
+    <link rel="stylesheet" href="impresszum-style.css">
+</head>
+<body>
+
+    <header>
+        <!-- Az oldal főcíme -->
+        <h1 id="bolygo-nev">Rólam / Impresszum</h1>
+    </header>
+
+    <main>
+        <div class="impresszum-content-wrapper">
+            <!-- Profilkép konténer -->
+            <div class="profil-image-container">
+                <!-- A profilkép, ami kattintható lesz -->
+                <img id="profil-kep" src="images/webkoll_logo_web2.svg" alt="Profilkép">
+                <p class="kep-felirat">(Kattints a képre a nagyításhoz)</p>
+            </div>
+            <!-- Szöveges részletek konténere -->
+            <div class="details-container">
+                <h2>Cégleírás és Elérhetőségek</h2>
+                <p id="ceg-leiras">
+                    Üdvözöllek! Ez itt a bemutatkozó szövegem helye. Itt részletezhetem a tevékenységemet, a cégem profilját, vagy bármilyen információt, amit fontosnak tartok megosztani. A webfejlesztés iránti szenvedélyem hajt, és célom, hogy modern, reszponzív és felhasználóbarát weboldalakat készítsek, mint amilyen ez is.
+                </p>
+                <ul class="elerhetosegek">
+                    <!-- Email link, ami megnyitja az email klienst -->
+                    <li><strong>Email:</strong> <a href="mailto:a.te.email.címed@example.com">a.te.email.címed@example.com</a></li>
+                    <!-- Telefon link, ami mobilon hívást indít -->
+                    <li><strong>Telefon:</strong> <a href="tel:+36301234567">+36 30 123 4567</a></li>
+                    <li><strong>Weboldal:</strong> <a href="https://example.com" target="_blank">www.weboldalam.hu</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="vissza-gomb-container">
+            <!-- Gomb a főoldalra való visszatéréshez -->
+            <a href="index.html" id="vissza-gomb">Vissza a Főoldalra</a>
+    </div>
+    </footer>
+
+    <!-- Teljes képernyős modal a kép nagyításához (az adatlap.html-ből átemelve) -->
+    <div id="modal-overlay">
+        <span id="close-modal-btn">×</span>
+        <img id="modal-image" src="" alt="Nagyított kép">
+    </div>
+
+    <!-- A logika, ami a képnagyítást kezeli -->
+    <script src="impresszum-script.js"></script>
+</body>
+</html>

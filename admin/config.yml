@@ -1,0 +1,31 @@
+# A háttérrendszer beállítása
+backend:
+  name: git-gateway # Nem 'github', hanem 'git-gateway'! Ez használja a Netlify Identity-t.
+  branch: main # Az ág, ahova a módosításokat menti
+
+# A médiafájlok (képek, hangok) kezelése
+# Az elérési útvonalaknak a gyökérkönyvtárhoz képest kell lenniük.
+media_folder: "images" 
+public_folder: "/images"
+media_library:
+  config:
+    multiple: true
+
+# A szerkeszthető tartalmak gyűjteményei
+collections:
+  - name: "planets"
+    label: "Égitestek"
+    label_singular: "Égitest"
+    folder: "data" # A mappa, ahol az adatfájlokat tárolja (.json)
+    create: true
+    slug: "{{id}}" # A fájlnév a megadott 'id' mezőből fog generálódni
+    extension: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "Azonosító (pl. 'mercury')", name: "id", widget: "string", pattern: ['^[a-z0-9-]+$', "Csak kisbetűk, számok és kötőjel!"]}
+      - {label: "Név (pl. 'Merkúr')", name: "nev", widget: "string"}
+      - {label: "Fő kép", name: "kep", widget: "image"}
+      - {label: "Hangfájl", name: "hang", widget: "file", required: false}
+      - {label: "Leírás", name: "leiras", widget: "markdown"}
+      - {label: "Galéria képek", name: "galeria", widget: "list", field: {label: "Kép", name: "kep_url", widget: "image"}}

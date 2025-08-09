@@ -1,0 +1,8 @@
+{
+    "id": "earth",
+    "nev": "Föld",
+    "kep": "images/föld.png",
+    "hang": "audio/earth.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Föld: Az élettel teli, kék oázis</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A végtelennek tűnő, sötét űrben létezik egy különleges, törékeny és élettel teli világ – a mi otthonunk, a Föld. Az űrből nézve egy ragyogó kék márványgolyónak tűnik. A Naprendszerben ez az egyetlen ismert hely, ahol az élet kialakult és fennmaradt. De mi teszi a Földet ennyire egyedivé? A válasz a tökéletes egyensúlyban rejlik.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Föld éppen a megfelelő távolságban kering a Naptól, az úgynevezett lakható zónában, így a víz mindhárom halmazállapotában jelen tud lenni. A folyékony víz pedig elengedhetetlen az általunk ismert élethez. Bolygónk felszínének több mint 70%-át óceánok borítják.</span></p>",
+    "galeria": ["images/earth/föld1.jpg", "images/earth/föld2.jpg", "images/earth/föld3.jpg"]
+}

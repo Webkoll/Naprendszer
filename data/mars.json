@@ -1,0 +1,8 @@
+{
+    "id": "mars",
+    "nev": "Mars",
+    "kep": "images/planet_mars.png",
+    "hang": "audio/mars.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A vörös bolygó rejtélyei</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Föld után a következő bolygó a Naptól a Mars, a híres „vörös bolygó”. Ezt a nevet jellegzetes, rozsdavörös színe miatt kapta, amit a felszínét borító vas-oxid okoz. A Mars régóta izgatja az emberiség fantáziáját, hiszen a Naprendszerben ez a bolygó hasonlít a leginkább a Földre. Vannak rajta pólussapkák, évszakok, és egy nap hossza is majdnem megegyezik a földiével.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Mars egy hideg, sivatagos világ. Vékony légköre főként szén-dioxidból áll. Itt található a Naprendszer legmagasabb hegye, az Olympus Mons, egy gigantikus pajzsvulkán, ami háromszor magasabb, mint a Mount Everest.</span></p>",
+    "galeria": ["images/mars/mars.png", "images/mars/mars01.jpg", "images/mars/mars03.webp", "images/mars/mars02.webp","images/mars/mars_hubble.jpg","images/mars/mars_hubble2.jpg","images/mars/mars-holdjai.jpg","images/mars/PIA02653~large.jpg","images/mars/PIA23963~large.jpg"]
+}

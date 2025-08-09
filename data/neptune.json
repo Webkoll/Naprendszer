@@ -1,0 +1,8 @@
+{
+    "id": "neptune",
+    "nev": "Neptunusz",
+    "kep": "images/neptunusz.png",
+    "hang": "audio/neptun.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A viharos, mélykék és távoli világ</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Naprendszer legkülső bolygója, melynek létezését először nem távcsővel, hanem matematikával jósolták meg az Uránusz pályájának zavarai alapján. Gyönyörű, mélykék színét a légkörében lévő metán okozza.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Neptunuszon fújnak a Naprendszer legerősebb szelei, sebességük elérheti a 2100 km/órát is. Legnagyobb holdja, a Triton, visszafelé (retrográd) kering, ami arra utal, hogy a Kuiper-övből befogott törpebolygó lehetett.</span></p>",
+    "galeria": ["images/neptune/neptun1.jpg", "images/neptune/neptun2.jpg","images/neptune/Neptunusz és Triton.jpg","images/neptune/neptunusz_voyager2.1.jpg","images/neptune/neptunusz_voyager2.jpg"]
+}

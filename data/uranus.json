@@ -1,0 +1,9 @@
+{
+    "id": "uranus",
+    "nev": "Uránusz",
+    "kep": "images/uránusz.png",
+    "hang": "audio/uranus2.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Az oldalán forgó, fagyos jégóriás</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Az Uránusz egy jégóriás, melynek jellegzetes, kékeszöld színét a légkörében található metán adja. Legkülönösebb tulajdonsága a forgása: szinte az oldalán fekve forog, a tengelydőlése 98 fokos. Ezt valószínűleg egy hatalmas, Föld méretű égitesttel való ütközés okozhatta.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Ez a rendkívüli tengelyferdeség extrém évszakokat eredményez: mindkét pólusa 42 éven át folyamatosan napfényben, majd 42 éven át teljes sötétségben van. 28 ismert holdja van, melyeket Shakespeare és Alexander Pope műveinek szereplőiről nevezték el.</span></p>",
+    "galeria": ["images/uranus/ur1.jpg", "images/uranus/ur2.jpg","images/uranus/ur3.jpg"]
+}
+

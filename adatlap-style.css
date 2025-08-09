@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00001a;
+    background-image: url('images/space-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #75a9b7; /* Illeszkedik a főoldal glow színéhez */
+    text-shadow: 0 0 10px #75a9b74f;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    border-bottom: 1px solid #75a9b7;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 26, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.main-image-container {
+    flex: 1 1 400px;
+}
+
+#bolygo-kep {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #75a9b7;
+}
+
+.details-container {
+    flex: 2 1 500px;
+}
+
+#bolygo-leiras {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.gallery-container {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #75a9b7;
+    border-color: #75a9b7;
+
+}
+
+.vissza-gomb-container {
+    text-align: center; /* Vízszintesen középre igazítja a benne lévő gombot */
+    padding: 30px 20px 50px 20px; /* Térköz: 30px fent, 50px lent, hogy ne legyen a lap aljára tapadva */
+}
+
+/* A gomb stílusa, a hibás pozicionálás nélkül */
+#close-overview-btn {
+    /* A pozicionálási szabályokat teljesen eltávolítottuk, mert a container intézi */
+    
+    display: inline-block; /* Fontos, hogy a linkként/gombként működő elem felvegye a stílusokat */
+    text-decoration: none; /* Eltávolítja az aláhúzást, ha a gomb egy <a> tag */
+
+    /* Egyedi kinézet (ezek a te stílusaid, kicsit finomítva) */
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    color: #ffffff;
+    border: 1px solid rgba(117, 169, 183);
+    border-radius: 8px;
+    padding: 12px 25px; /* Kicsit nagyobb, jobban látható gomb */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+#close-overview-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #75a9b7;
+    transform: scale(1.03); /* Finom növekedés hover-re */
+}
+
+/* Modal (Lightbox) stílusok a képnagyításhoz */
+#modal-overlay {
+    position: fixed; /* A teljes ablakot lefedi, görgetéstől függetlenül */
+    z-index: 1000; /* Minden más elem felett jelenik meg */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92); /* Sötét, áttetsző háttér */
+    display: none; /* Alapértelmezetten rejtett */
+    justify-content: center; /* Vízszintesen középre igazítja a tartalmat */
+    align-items: center; /* Függőlegesen középre igazítja a tartalmat */
+    backdrop-filter: blur(3px); /* Háttér elmosása a modern böngészőkben */
+}
+
+#modal-image {
+    display: block;
+    max-width: 90%; /* Maximális szélesség a képernyő 90%-a */
+    max-height: 85%; /* Maximális magasság a képernyő 85%-a */
+    border-radius: 5px;
+    border: 1px solid #75a9b7; /* Illeszkedik a többi elemhez */
+    animation: zoomIn 0.4s; /* Finom animáció megjelenéskor */
+}
+
+/* Bezárás gomb stílusa */
+#close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #75a9b7;
+    font-size: 50px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+#close-modal-btn:hover,
+#close-modal-btn:focus {
+    color: #75a9b7;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* Egyszerű zoom animáció a képnek */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* === ÚJ: AUDIOLEJÁTSZÓ STÍLUSOK === */
+
+.audio-player-container {
+    display: none; /* Alapból rejtett, a JS jeleníti meg, ha van hangfájl */
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0, 0, 26, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid #75a9b7;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-top: 25px;
+}
+
+.player-btn {
+    background-color: transparent;
+    border: 2px solid #75a9b7;
+    color: #ffffff;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.player-btn:hover {
+    background-color: rgba(117, 169, 183, 0.3);
+    transform: scale(1.1);
+}
+
+.seek-slider {
+    flex-grow: 1; /* Kitölti a rendelkezésre álló helyet */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(117, 169, 183, 0.4);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Chrome/Safari csúszka gomb */
+.seek-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #75a9b7;
+    border-radius: 50%;
+    border: 2px solid #00001a;
+    box-shadow: 0 0 8px #75a9b7;
+}
+
+/* Firefox csúszka gomb */
+.seek-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #75a9b7;
+    border-radius: 50%;
+    border: 2px solid #00001a;
+    box-shadow: 0 0 8px #75a9b7;
+}
+
+.time-display {
+    font-size: 0.9rem;
+    color: #ccc;
+    min-width: 90px; /* Hogy ne ugráljon a méret */
+    text-align: center;
+}

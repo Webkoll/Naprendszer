@@ -1,0 +1,8 @@
+{
+    "id": "kuiper-belt",
+    "nev": "Kuiper-öv",
+    "kep": "images/kuiper.png",
+    "hang": "audio/kuiper-ov2.wav",
+    "leiras": "<strong><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Naprendszer fagyos kincsesládája</span></strong><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>A Kuiper-öv egy hatalmas, fánkszerű terület a Neptunusz pályáján túl, tele milliárdnyi jeges égitesttel, amik a Naprendszer 4,6 milliárd évvel ezelőtti születésének megmaradt építőkövei. Ezek az objektumok igazi kozmikus időkapszulák.</span></p><p><span style='font-size:16px;line-height:107%;font-family:\"Montserrat Light\";'>Itt keringenek a Plútóhoz hasonló törpebolygók, mint az Eris, a Makemake és a Haumea. A Kuiper-öv az otthona a rövid periódusú üstökösöknek is, melyeket a gravitációs hatások időnként a Naprendszer belső részei felé irányítanak.</span></p>",
+    "galeria": ["images/kuiper/kuiper1.jpg", "images/kuiper/kuiper2.gif","images/kuiper/kuiper3.gif","images/kuiper/kuiper4.jpg", "images/kuiper/kuiper5.jpeg","images/kuiper/kuiper6.gif","images/kuiper/kuiper7.jpg","images/kuiper/kuiper8.jpg"]
+}

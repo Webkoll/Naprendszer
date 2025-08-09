@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görgethető Naprendszer Képekkel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="impresszum.html" id="impresszum-logo-top">
+        <img src="images/webkoll_logo_web.svg" alt="webkoll_Logó">
+    </a>
+
+    <header>
+        <h1>Görgess lefelé a Naprendszer felfedezéséhez!</h1>
+    </header>
+
+    <section class="solar-system">
+        <!-- A bolygók és egyéb elemek szövegdoboz... -->
+        <div id="sun" class="celestial-object planet sun" data-name="Nap">
+            <div class="planet-details"><p><strong>Típus:</strong> G2V típusú sárga törpecsillag<br>
+                                            <strong>Átmérő:</strong> kb. 1,39 millió km<br>
+                                            <strong>Tömeg:</strong> kb. 333 000-szerese a Föld tömegének<br>
+                                            <strong>Felszíni hőmérséklet:</strong> kb. 5 500 °C<br>
+                                            <strong>Távolság a Földtől:</strong> kb. 149,6 millió km (1 csillagászati egység)<br>
+                                            <strong>Kor:</strong> kb. 4,6 milliárd év<br>
+                                            <strong>Érdekesség:</strong> A Nap energiáját hidrogénből héliumot termelő magfúzió biztosítja, és ez a folyamat másodpercenként több millió tonna anyagot alakít energiává.
+            </p></div></div>
+            </a>
+        <div id="mercury" class="celestial-object planet mercury" data-name="Merkúr">
+            <div class="planet-details"><p>
+                                            <strong>Keringési idő (1 év):</strong> 88 nap<br>
+                                            <strong>Távolság a Naptól:</strong> 57,9 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 91,7 millió km<br>
+                                            <strong>Típus:</strong> Kőzetbolygó<br>
+                                            <strong>Holdak száma:</strong> 0<br>
+                                            <strong>Érdekesség:</strong> A Merkúron a nappal kb. 430 °C, az éjszaka -180 °C lehet.
+                                        </p></div></div>
+        <div id="venus" class="celestial-object planet venus" data-name="Vénusz">
+            <div class="planet-details"><p><strong>Keringési idő (1 év):</strong> 225 nap<br>
+                                            <strong>Távolság a Naptól:</strong> 108,2 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 41,4 millió km<br>
+                                            <strong>Típus:</strong> Kőzetbolygó<br>
+                                            <strong>Holdak száma:</strong> 0<br>
+                                            <strong>Érdekesség:</strong> A Vénuszon sűrű, forró légkör van – forróbb, mint a Merkúr!</p></div>
+        </div>
+        <div id="earth" class="celestial-object planet earth" data-name="Föld">
+            <div class="moon-orbit"><div class="moon"></div></div>
+            <div class="iss-orbit"><div class="iss"></div></div>
+            <div class="planet-details"><p><strong>Lakosság:</strong> kb. 8 milliárd<br>
+                                            <strong>Keringési idő (1 év):</strong> 365,25 nap<br>
+                                            <strong>Távolság a Naptól:</strong> 149,6 millió km<br>
+                                            <strong>Típus:</strong> Kőzetbolygó<br>
+                                            <strong>Holdak száma:</strong> 1<br>
+                                            <strong>Érdekesség:</strong> A Föld az egyetlen ismert bolygó, ahol élet létezik.
+            </p><button id="iss-button" class="action-button">ISS aktiválása</button></div>
+        </div>
+        <div id="mars" class="celestial-object planet mars" data-name="Mars">
+            <div class="rover-orbit"><div class="rover"></div></div>
+            <div class="planet-details"><p><strong>Keringési idő / 1 év:</strong> 687 nap<br>
+                                            <strong>Távolság a Naptól:</strong> 227,9 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 78 millió km<br>
+                                            <strong>Típus:</strong> Kőzetbolygó<br>
+                                            <strong>Holdak száma:</strong> 2<br>
+                                            <strong>Érdekesség:</strong> A Marson óriási porviharok dúlnak, amelyek hetekig is tarthatnak.
+            </p></div>
+        </div>
+        <div id="jupiter" class="celestial-object planet jupiter" data-name="Jupiter">
+             <div class="et-flyby"></div>
+             <div class="planet-details"><p><strong>Típus:</strong> Gázóriás
+                                            <strong>Keringési idő (1 év):</strong> 11,86 év<br>
+                                            <strong>Távolság a Naptól:</strong> 778,5 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 628 millió km<br>
+                                            <strong>Típus:</strong> Gázóriás<br>
+                                            <strong>Holdak száma:</strong> 95+<br>
+                                            <strong>Érdekesség:</strong> A Jupiternek van egy hatalmas vihara, a Nagy Vörös Folt, ami nagyobb, mint a Föld.
+            </p></div>
+        </div>
+        <div id="saturn" class="celestial-object planet saturn" data-name="Szaturnusz">
+            <div class="planet-details"><p><strong>Keringési idő (1 év):</strong> 29,5 év<br>
+                                            <strong>Távolság a Naptól:</strong> 1 433,5 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 1 275 millió km<br>
+                                            <strong>Típus:</strong> Gázóriás<br>
+                                            <strong>Holdak száma:</strong> 146+<br>
+                                            <strong>Érdekesség:</strong> A Szaturnusznak gyönyörű, jól látható gyűrűrendszere van.
+            </p></div>
+        </div>
+            
+        <div id="uranus" class="celestial-object planet uranus" data-name="Uránusz">
+            <div class="planet-details"><p><strong>Keringési idő (1 év):</strong> 84 év<br>
+                                            <strong>Távolság a Naptól:</strong> 2 872,5 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 2 720 millió km<br>
+                                            <strong>Típus:</strong> Jégóriás<br>
+                                            <strong>Holdak száma:</strong> 28+<br>
+                                            <strong>Érdekesség:</strong> Az Uránusz oldalra dőlve forog, mintha "feküdne" az űrben.
+            </p></div>
+        </div>
+        <div id="neptune" class="celestial-object planet neptune" data-name="Neptunusz">
+            <div class="planet-details"><p><strong>Keringési idő (1 év):</strong> 164,8 év<br>
+                                            <strong>Távolság a Naptól:</strong> 4 495,1 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 4 350 millió km<br>
+                                            <strong>Típus:</strong> Jégóriás<br>
+                                            <strong>Holdak száma:</strong> 14<br>
+                                            <strong>Érdekesség:</strong> A Naprendszer leggyorsabb szele Neptunuszon van: akár 2 100 km/h sebességgel fúj.
+            </p></div>
+        </div>
+        <div id="pluto" class="celestial-object planet pluto" data-name="Pluto">
+            <div class="planet-details"><p><strong>Keringési idő (1 év):</strong> 248 év<br>
+                                            <strong>Távolság a Naptól:</strong> ~5 900 millió km<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> kb. 5 000 millió km<br>
+                                            <strong>Típus:</strong> Törpebolygó (jeges, sziklás)<br>
+                                            <strong>Holdak száma:</strong> 5<br>
+                                            <strong>Érdekesség:</strong> A legnagyobb holdja, a Kharón, majdnem akkora, mint maga a Plútó – gyakorlatilag kettős rendszerként keringenek.
+            </p></div>
+        </div>
+        <div id="kuiper-belt" class="celestial-object planet kuiper-belt" data-name="Kuiper-öv">
+            <div class="planet-details"><p><strong>Elhelyezkedés:</strong> A Neptunuszon túl, kb. 30–50 csillagászati egységre (CsE) a Naptól<br>
+                                            <strong>Kiterjedés:</strong> Több milliárd kilométeres övezet<br>
+                                            <strong>Távolság a Földtől (átlagosan):</strong> 4 500–7 500 millió km<br>
+                                            <strong>Típus:</strong> Jeges kisbolygók és törpebolygók övezete<br>
+                                            <strong>Ismert objektumok száma:</strong> több mint 1 000 megfigyelt, milliók lehetnek<br>
+                                            <strong>Érdekesség:</strong> A Plútó is a Kuiper-öv része, és innen érkezhetnek hosszú periódusú üstökösök is a Naprendszer belsejébe.
+            </p></div>
+        </div>
+
+        <!-- A VOYAGER ITT, A KUIPER-ÖV UTÁN VAN! -->
+        <div id="scrolling-voyager"></div>
+    </section>
+
+    <!-- EZ A LÁBLÉC CSAK A GÖRGETÉS VÉGÉT JELZI -->
+    <footer>
+        <p>A felfedezés vége.</p>
+        <button id="show-solar-system-view-btn" class="action-button">Egész Naprendszer Megtekintése</button>
+    </footer>
+
+    <!-- IMPRESSZUM SZEKCIÓ A LAP ALJÁN -->
+    <div class="site-footer">
+        <div class="footer-impresszum-container">
+            <h2>Elérhetőség & Impresszum</h2>
+            <a href="impresszum.html">
+                <img src="images/webkoll_logo_web.svg" alt="Impresszum Logó" class="footer-logo">
+            </a>
+            <p>
+                Kattints a logóra a részletes információkért, vagy látogass el közvetlenül az <a href="impresszum.html">impresszum oldalra</a>.
+            </p>
+        </div>
+    </div>
+    
+    <!-- ÚJ, REJTETT KONTÉNER A FELÜLNÉZETI NAPRENDSZERHEZ -->
+    <div id="solar-system-overview">
+        <button id="close-overview-btn" class="action-button">Vissza a Felfedezéshez</button>
+        <div id="distance-slider-container">
+        <label for="distance-slider">Pályák távolsága</label>
+        <input type="range" id="distance-slider" min="0.5" max="2.5" step="0.1" value="1">
+    </div>
+        <div class="overview-sun"></div>
+
+        <!-- Bolygók pályái és maguk a bolygók -->
+        <div class="orbit-path mercury-orbit-path"><div class="planet-in-orbit mercury-in-orbit"></div></div>
+        <div class="orbit-path venus-orbit-path"><div class="planet-in-orbit venus-in-orbit"></div></div>
+        <div class="orbit-path earth-orbit-path"><div class="planet-in-orbit earth-in-orbit"></div></div>
+        <div class="orbit-path mars-orbit-path"><div class="planet-in-orbit mars-in-orbit"></div></div>
+        <div class="orbit-path jupiter-orbit-path"><div class="planet-in-orbit jupiter-in-orbit"></div></div>
+        <div class="orbit-path saturn-orbit-path"><div class="planet-in-orbit saturn-in-orbit"></div></div>
+        <div class="orbit-path uranus-orbit-path"><div class="planet-in-orbit uranus-in-orbit"></div></div>
+        <div class="orbit-path neptune-orbit-path"><div class="planet-in-orbit neptune-in-orbit"></div></div>
+        <div class="orbit-path pluto-orbit-path"><div class="planet-in-orbit pluto-in-orbit"></div></div>
+
+        <!-- SVG konténer a Kuiper-övhöz -->
+        <svg id="kuiper-belt-svg" width="100%" height="100%"></svg>
+        
+        <!-- Voyager szonda a felülnézetben -->
+        <div id="overview-voyager"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
